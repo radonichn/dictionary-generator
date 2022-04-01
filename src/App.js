@@ -9,7 +9,7 @@ function App() {
   const [signature, setSignature] = useState('');
 
   const translate = (wordsList, signature) => {
-    let url = `https://translation.googleapis.com/language/translate/v2?key=${process.env.API_KEY}`;
+    let url = `https://translation.googleapis.com/language/translate/v2?key=${process.env.REACT_APP_API_KEY}`;
     url += '&q=' + JSON.stringify(wordsList);
     url += `&format=text`;
     url += `&source=en`;
