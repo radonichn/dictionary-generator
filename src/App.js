@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import List from './components/List';
-import { API_KEY } from './utils/constants';
 import { capitalizeFirstLetter, parseText } from './utils/parser';
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
   const [signature, setSignature] = useState('');
 
   const translate = (wordsList, signature) => {
-    let url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
+    let url = `https://translation.googleapis.com/language/translate/v2?key=${process.env.API_KEY}`;
     url += '&q=' + JSON.stringify(wordsList);
     url += `&format=text`;
     url += `&source=en`;
